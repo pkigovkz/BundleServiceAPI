@@ -4,7 +4,7 @@
 
     <groupId>kz.gov.pki.osgi.layer.api</groupId>
     <artifactId>BundleServiceAPI</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1</version>
     <packaging>jar</packaging>
 
     <name>BundleServiceAPI</name>
@@ -12,13 +12,14 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <kotlin.version>1.2.21</kotlin.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib</artifactId>
-            <version>1.1.2</version>
+            <version>${kotlin.version}</version>
         </dependency>
         <dependency>
             <groupId>org.json</groupId>
@@ -32,7 +33,7 @@
             <plugin>
                 <artifactId>kotlin-maven-plugin</artifactId>
                 <groupId>org.jetbrains.kotlin</groupId>
-                <version>1.1.2</version>
+                <version>${kotlin.version}</version>
                 <executions>
                     <execution>
                         <id>compile</id>
@@ -93,4 +94,14 @@
             </plugin>
         </plugins>
     </build>
+    <distributionManagement>
+		<repository>
+			<id>nexus</id>
+			<url>http://devgit:8081/nexus/content/repositories/iok_releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus</id>
+			<url>http://devgit:8081/nexus/content/repositories/iok_snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
